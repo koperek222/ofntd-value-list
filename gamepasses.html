@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>OFNTD - Gamepass Characters</title>
@@ -18,7 +18,7 @@
         }
         .back-btn {
             display: inline-block;
-            color: #eab308; /* Żółty kolor powrotu pasujący do menu głównego */
+            color: #eab308; /* Yellow navigation color */
             text-decoration: none;
             font-weight: bold;
             font-size: 14px;
@@ -57,7 +57,7 @@
             margin-bottom: 20px;
         }
         
-        /* ZMIENIONO NA 64x64px: Ramka na zdjęcie */
+        /* 64x64px Image Frame */
         .char-avatar {
             width: 64px;
             height: 64px;
@@ -66,16 +66,16 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden; /* Odcina wszystko co wystaje */
+            overflow: hidden; /* Cuts off everything that sticks out */
             border: 1px solid #333;
-            flex-shrink: 0;   /* Zapobiega spłaszczeniu ramki, gdy nazwa jest długa */
+            flex-shrink: 0;   /* Prevents distortion */
         }
         
-        /* Styl obrazka wewnątrz ramki */
+        /* Image inside the frame */
         .char-avatar img {
-            width: 100%;       /* Wypełnia całą szerokość ramki */
-            height: 100%;      /* Wypełnia całą wysokość ramki */
-            object-fit: cover; /* Docina obrazek proporcjonalnie bez zniekształceń */
+            width: 100%;       
+            height: 100%;      
+            object-fit: cover; /* Crops image proportionally without distortion */
         }
         
         .name-gamepass { color: #eab308; font-weight: bold; font-size: 16px; }
@@ -100,17 +100,17 @@
 <body>
 
     <div class="header-container">
-        <a href="index.html" class="back-btn">← Powrót do menu głównego</a>
+        <!-- English navigation link -->
+        <a href="index.html" class="back-btn">← Back to main menu</a>
         <h1>🎟️ Gamepass Characters</h1>
     </div>
 
     <div class="grid-container">
 
-        <!-- KAFELEK 1: VIP -->
+        <!-- CARD 1: VIP -->
         <div class="char-card">
             <div class="card-header">
                 <div class="char-avatar">
-                    <!-- Podmień poniższy adres URL na swój link 64x64 bezpośredni ze strony hostingowej -->
                     <img src="https://placehold.co" alt="VIP">
                 </div>
                 <div class="name-gamepass">VIP</div>
@@ -122,11 +122,10 @@
             </div>
         </div>
 
-        <!-- KAFELEK 2: Prem Pass -->
+        <!-- CARD 2: Prem Pass -->
         <div class="char-card">
             <div class="card-header">
                 <div class="char-avatar">
-                    <!-- Podmień poniższy adres URL na swój link 64x64 bezpośredni ze strony hostingowej -->
                     <img src="https://placehold.co" alt="Prem Pass">
                 </div>
                 <div class="name-gamepass">Prem Pass</div>
@@ -138,11 +137,10 @@
             </div>
         </div>
 
-        <!-- KAFELEK 3: 2x Speed -->
+        <!-- CARD 3: 2x Speed -->
         <div class="char-card">
             <div class="card-header">
                 <div class="char-avatar">
-                    <!-- Podmień poniższy adres URL na swój link 64x64 bezpośredni ze strony hostingowej -->
                     <img src="https://placehold.co" alt="2x Speed">
                 </div>
                 <div class="name-gamepass">2x Speed</div>
