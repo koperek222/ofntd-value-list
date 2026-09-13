@@ -32,13 +32,15 @@
             text-transform: uppercase;
             letter-spacing: 2px;
         }
-               .grid-container {
+             .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            /* ZMIANA: Zastąpiono 1fr przez 320px, żeby kafelki nigdy się nie rozciągały */
+            grid-template-columns: repeat(auto-fill, minmax(320px, 320px));
             gap: 25px;
             max-width: 1200px;
             margin: 0 auto;
         }
+
 
         .char-card {
             background-color: #0b0b0b;
