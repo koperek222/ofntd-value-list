@@ -12,7 +12,7 @@
             text-align: center;
         }
         h1 {
-            color: #ffcc00;
+            color: #ffffff;
             margin-bottom: 30px;
         }
         .menu-container {
@@ -22,35 +22,53 @@
             max-width: 400px;
             margin: 0 auto;
         }
+        /* Wspólny styl dla wszystkich przycisków */
         .menu-btn {
-            background-color: #2d2d2d;
-            color: #a855f7;
             text-decoration: none;
             padding: 15px;
             font-size: 18px;
             font-weight: bold;
             border-radius: 5px;
-            border: 1px solid #555;
             transition: 0.2s;
+            background-color: #2d2d2d;
         }
-        .menu-btn:hover {
-            background-color: #ffcc00;
+        /* Indywidualne kolory dla każdego przycisku */
+        .btn-nightmare {
+            color: #a855f7; /* Fioletowy */
+            border: 2px solid #a855f7;
+        }
+        .btn-nightmare:hover {
+            background-color: #a855f7;
             color: #1e1e1e;
-            border-color: #ffcc00;
+        }
+
+        .btn-secret {
+            color: #ef4444; /* Czerwony */
+            border: 2px solid #ef4444;
+        }
+        .btn-secret:hover {
+            background-color: #ef4444;
+            color: #1e1e1e;
+        }
+
+        .btn-gamepasses {
+            color: #eab308; /* Żółty */
+            border: 2px solid #eab308;
+        }
+        .btn-gamepasses:hover {
+            background-color: #eab308;
+            color: #1e1e1e;
         }
     </style>
 </head>
 <body>
 
     <h1>Official Value List for OFNTD</h1>
-    <p>Select a category to view the list of values:</p>
+    <p>Wybierz kategorię, aby zobaczyć listę wartości:</p>
 
     <div class="menu-container">
-        <!-- Linki prowadzące do osobnych plików HTML -->
-        <a href="nightmare.html" class="menu-btn">💀 Nightmare Characters</a>
-        <a href="secret.html" class="menu-btn">🔮 Secret Characters</a>
-        <a href="gamepasses.html" class="menu-btn">🎟️ Gamepass</a>
+        <!-- Każdy przycisk ma teraz swoją własną klasę z kolorem -->
+        <a href="nightmare.html" class="menu-btn btn-nightmare">💀 Nightmare Characters</a>
+        <a href="secret.html" class="menu-btn btn-secret">🔮 Secret Characters</a>
+        <a href="gamepasses.html" class="menu-btn btn-gamepasses">🎟️ Gamepass Characters</a>
     </div>
-
-</body>
-</html>
