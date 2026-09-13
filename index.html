@@ -109,32 +109,5 @@
 
     </div>
 
-    <!-- SKRYPT WYSZUKIWARKI -->
-    <script>
-        function searchCharacters() {
-            // Pobieramy tekst wpisany w wyszukiwarkę i zamieniamy na małe litery
-            let input = document.getElementById('searchBar').value.toLowerCase();
-            // Pobieramy wszystkie kafelki postaci na stronie
-            let cards = document.getElementsByClassName('char-card');
-
-            // Przechodzimy przez każdy kafelek po kolei
-            for (let i = 0; i < cards.length; i++) {
-                // Szukamy nazwy postaci wewnątrz nagłówka karty (name-normal lub name-shiny)
-                let nameElement = cards[i].querySelector('.name-normal, .name-shiny');
-                
-                if (nameElement) {
-                    let characterName = nameElement.textContent.toLowerCase();
-                    
-                    // Jeśli nazwa zawiera wpisany tekst, pokazujemy kafelek, w przeciwnym razie ukrywamy
-                    if (characterName.includes(input)) {
-                        cards[i].style.display = "flex";
-                    } else {
-                        cards[i].style.display = "none";
-                    }
-                }
-            }
-        }
-    </script>
-
 </body>
 </html>
