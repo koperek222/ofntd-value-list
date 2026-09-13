@@ -110,6 +110,28 @@
         .status-rising { color: #4ade80; }
         .status-unstable { color: #f59e0b; }
         .status-na { color: #666666; }
+   
+            /* Styl dla wyszukiwarki */
+        #searchBar {
+            width: 100%;
+            max-width: 400px;
+            padding: 12px 20px;
+            margin-top: 15px;
+            background-color: #0b0b0b;
+            border: 2px solid #333;
+            border-radius: 8px;
+            color: #ffffff;
+            font-family: inherit;
+            font-size: 14px;
+            box-sizing: border-box;
+            transition: 0.2s;
+        }
+        #searchBar:focus {
+            border-color: #a855f7; /* Fioletowy blask przy kliknięciu */
+            outline: none;
+            box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
+        }
+
     </style>
 </head>
 <body>
@@ -117,6 +139,9 @@
     <div class="header-container">
         <a href="index.html" class="back-btn">← Back to main menu</a>
         <h1>💀 Nightmare Characters</h1>
+
+        
+          <input type="text" id="searchBar" onkeyup="searchCharacters()" placeholder="Search for a character...">
     </div>
 
     <div class="grid-container">
@@ -290,8 +315,33 @@
         </div>
 
     </div> <!-- NAJWAŻNIEJSZE ZAMKNIĘCIE SIATKI GRID-CONTAINER -->
-</body>
-</html>
+
+    <!-- SKRYPT WYSZUKIWARKI -->
+    <script>
+        function searchCharacters() {
+            // Pobieramy tekst wpisany w wyszukiwarkę i zamieniamy na małe litery
+            let input = document.getElementById('searchBar').value.toLowerCase();
+            // Pobieramy wszystkie kafelki postaci na stronie
+            let cards = document.getElementsByClassName('char-card');
+
+            // Przechodzimy przez każdy kafelek po kolei
+            for (let i = 0; i < cards.length; i++) {
+                // Szukamy nazwy postaci wewnątrz nagłówka karty (name-normal lub name-shiny)
+                let nameElement = cards[i].querySelector('.name-normal, .name-shiny');
+                
+                if (nameElement) {
+                    let characterName = nameElement.textContent.toLowerCase();
+                    
+                    // Jeśli nazwa zawiera wpisany tekst, pokazujemy kafelek, w przeciwnym razie ukrywamy
+                    if (characterName.includes(input)) {
+                        cards[i].style.display = "flex";
+                    } else {
+                        cards[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
 
 </body>
 </html>
