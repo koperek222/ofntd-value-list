@@ -34,11 +34,13 @@
         }
              .grid-container {
             display: grid;
-            /* ZMIANA: Zastąpiono 1fr przez 320px, żeby kafelki nigdy się nie rozciągały */
+           
             grid-template-columns: repeat(auto-fill, minmax(320px, 320px));
             gap: 25px;
             max-width: 1200px;
             margin: 0 auto;
+                 
+         justify-content: center;
         }
 
 
@@ -51,11 +53,11 @@
             position: relative;
             background-image: linear-gradient(145deg, #0f0f0f, #070707);
 
-            /* DOPISZ LUB POPRAW TE LINIE PONIŻEJ: */
-            width: 280px;        /* Stała szerokość kafelka */
+         
+            width: 280px;       
             box-sizing: border-box; 
-            flex-grow: 0;        /* Blokuje rozciąganie na wolną przestrzeń */
-            flex-shrink: 0;      /* Blokuje kurczenie się kafelka */
+            flex-grow: 0;       
+            flex-shrink: 0;      
         }
 
         .border-normal {
@@ -238,7 +240,7 @@
             </div>
         </div>
             </div>
-        </div> <!-- Tego znacznika brakowało w oryginalnym kodzie -->
+        </div>
 
         <!-- CARD 9: Phantom Mangle -->
         <div class="char-card border-normal">
@@ -292,7 +294,7 @@
             </div>
         </div>
 
-    </div> <!-- POPRAWNE ZAMKNIĘCIE CAŁEJ SIATKI GRID-CONTAINER -->
+    </div>
 </body>
 </html>
 
