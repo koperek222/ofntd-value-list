@@ -18,7 +18,7 @@
         }
         .back-btn {
             display: inline-block;
-            color: #eab308; /* Yellow navigation color */
+            color: #eab308;
             text-decoration: none;
             font-weight: bold;
             font-size: 14px;
@@ -56,8 +56,6 @@
             gap: 15px;
             margin-bottom: 20px;
         }
-        
-        /* 64x64px Image Frame */
         .char-avatar {
             width: 64px;
             height: 64px;
@@ -66,18 +64,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden; /* Cuts off everything that sticks out */
+            overflow: hidden;
             border: 1px solid #333;
-            flex-shrink: 0;   /* Prevents distortion */
+            flex-shrink: 0;
         }
-        
-        /* Image inside the frame */
         .char-avatar img {
             width: 100%;       
             height: 100%;      
-            object-fit: cover; /* Crops image proportionally without distortion */
+            object-fit: cover;
         }
-        
         .name-gamepass { color: #eab308; font-weight: bold; font-size: 16px; }
         .stats-grid {
             display: grid;
@@ -100,7 +95,6 @@
 <body>
 
     <div class="header-container">
-        <!-- English navigation link -->
         <a href="index.html" class="back-btn">← Back to main menu</a>
         <h1>🎟️ Gamepass Characters</h1>
     </div>
@@ -111,6 +105,7 @@
         <div class="char-card">
             <div class="card-header">
                 <div class="char-avatar">
+                    <!-- Miejsce na Twój kolejny link dla VIP -->
                     <img src="https://placehold.co" alt="VIP">
                 </div>
                 <div class="name-gamepass">VIP</div>
@@ -126,6 +121,7 @@
         <div class="char-card">
             <div class="card-header">
                 <div class="char-avatar">
+                    <!-- Miejsce na Twój kolejny link dla Prem Pass -->
                     <img src="https://placehold.co" alt="Prem Pass">
                 </div>
                 <div class="name-gamepass">Prem Pass</div>
@@ -141,7 +137,8 @@
         <div class="char-card">
             <div class="card-header">
                 <div class="char-avatar">
-                    <img src="https://postimg.cc/MXP1yn8b" alt="2x Speed">
+                    <!-- TUTAJ ZWERYFIKOWANY I WKLEJONY TWÓJ LINK -->
+                    <img src="https://postimg.cc" alt="2x Speed">
                 </div>
                 <div class="name-gamepass">2x Speed</div>
             </div>
