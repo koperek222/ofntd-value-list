@@ -1,129 +1,297 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>OFNTD - Nightmare Characters</title>
     <style>
         body {
-            background-color: #1e1e1e;
+            background-color: #050505;
             color: #ffffff;
             font-family: 'Consolas', 'Courier New', monospace;
-            padding: 20px;
+            padding: 30px;
+            margin: 0;
         }
-        h1 { 
-            color: #ff3333; 
+        .header-container {
+            border-bottom: 2px solid #222;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
         }
         .back-btn {
             display: inline-block;
-            color: #ffcc00;
+            color: #a855f7; /* Purple navigation color matching the main menu */
             text-decoration: none;
-            margin-bottom: 20px;
             font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 10px;
         }
-        .back-btn:hover { 
-            text-decoration: underline; 
-        }
-        /* Styl dla tabeli dzielącej stronę na 2 kolumny */
-        .value-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        .value-table td {
-            width: 50%;
-            vertical-align: top;
-            padding: 10px 20px;
-        }
-        pre { 
-            font-family: inherit;
-            font-size: 14px; 
-            line-height: 1.5; 
+        .back-btn:hover { text-decoration: underline; }
+        h1 {
+            color: #ffffff;
+            font-size: 24px;
             margin: 0;
-            background-color: #252525;
-            padding: 15px;
-            border-radius: 5px;
-            border: 1px solid #333;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .char-card {
+            background-color: #0b0b0b;
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            background-image: linear-gradient(145deg, #0f0f0f, #070707);
+        }
+        /* Red border for Normal variants */
+        .border-normal {
+            border: 2px solid #ef4444;
+            box-shadow: 0 0 10px rgba(239, 68, 68, 0.15);
+        }
+        /* Green border for Shiny variants */
+        .border-shiny {
+            border: 2px solid #10b981;
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.15);
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        /* 64x64px Image Frame */
+        .char-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 8px;
+            background-color: #151515;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 1px solid #333;
+            flex-shrink: 0;
+        }
+        .char-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .name-normal { color: #ef4444; font-weight: bold; font-size: 16px; }
+        .name-shiny { color: #10b981; font-weight: bold; font-size: 16px; }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .stat-box { display: flex; flex-direction: column; }
+        .stat-label {
+            font-size: 11px;
+            color: #666;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            letter-spacing: 1px;
+        }
+        .stat-value { font-size: 14px; font-weight: bold; }
+        .status-stable { color: #38bdf8; }
+        .status-rising { color: #4ade80; }
+        .status-unstable { color: #f59e0b; }
+        .status-na { color: #666666; }
     </style>
 </head>
 <body>
 
-    <a href="index.html" class="back-btn">← Return to the main menu</a>
-    <h1>💀 Nightmare Characters Value List</h1>
-    <hr>
+    <div class="header-container">
+        <a href="index.html" class="back-btn">← Back to main menu</a>
+        <h1>💀 Nightmare Characters</h1>
+    </div>
 
-    <!-- Tabela dzieląca zawartość na dwie kolumny -->
-    <table class="value-table">
-        <tr>
-            <!-- LEWA KOLUMNA -->
-            <td>
-<pre>
-Bukavac mangle - 2.5 levi                                
-demand: 9/10                                               
-status: unstable
+    <div class="grid-container">
 
-(S)
-o/c
-demand: 10/10
-status: n/a
+        <!-- CARD 1: Shadow Bonnie -->
+        <div class="char-card border-normal">
+            <div class="card-header">
+                <div class="char-avatar">
+                    <img src="shadow_bonnie.png" alt="Shadow Bonnie">
+                </div>
+                <div class="name-normal">Shadow Bonnie</div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-box"><span class="stat-label">Value</span><span class="stat-value">0.6 levi</span></div>
+                <div class="stat-box"><span class="stat-label">Demand</span><span class="stat-value">8/10</span></div>
+                <div class="stat-box"><span class="stat-label">Status</span><span class="stat-value status-stable">Stable</span></div>
+            </div>
+        </div>
 
----------------------------------
-Shadow bonnie - 0,6 levi
-demand: 8/10
-status: stable
+        <!-- CARD 2: Shiny Shadow Bonnie -->
+        <div class="char-card border-shiny">
+            <div class="card-header">
+                <div class="char-avatar">
+                    <img src="shadow_bonnie_shiny.png" alt="Shiny Shadow Bonnie">
+                </div>
+                <div class="name-shiny">(S) Shadow Bonnie</div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-box"><span class="stat-label">Value</span><span class="stat-value">N/A</span></div>
+                <div class="stat-box"><span class="stat-label">Demand</span><span class="stat-value">N/A</span></div>
+                <div class="stat-box"><span class="stat-label">Status</span><span class="stat-value status-na">N/A</span></div>
+            </div>
+        </div>
 
-(S)
-n/a 
-demand: n/a
-status: n/a
+        <!-- CARD 3: Blighted Endo Freddy -->
+        <div class="char-card border-normal">
+            <div class="card-header">
+                <div class="char-avatar">
+                    <img src="blighted_endo_freddy.png" alt="Blighted Endo Freddy">
+                </div>
+                <div class="name-normal">Blighted Endo Freddy</div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-box"><span class="stat-label">Value</span><span class="stat-value">1.5 levi</span></div>
+                <div class="stat-box"><span class="stat-label">Demand</span><span class="stat-value">9/10</span></div>
+                <div class="stat-box"><span class="stat-label">Status</span><span class="stat-value status-rising">Slowly Rising</span></div>
+            </div>
+        </div>
 
----------------------------------
-marrionetes puppet - 0.25 levi
-demand: 6/10
-status: stable
+        <!-- CARD 4: Shiny Blighted Endo Freddy -->
+        <div class="char-card border-shiny">
+            <div class="card-header">
+                <div class="char-avatar">
+                    <img src="blighted_endo_freddy_shiny.png" alt="Shiny Blighted Endo Freddy">
+                </div>
+                <div class="name-shiny">(S) Blighted Endo Freddy</div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-box"><span class="stat-label">Value</span><span class="stat-value">O/C</span></div>
+                <div class="stat-box"><span class="stat-label">Demand</span><span class="stat-value">10/10</span></div>
+                <div class="stat-box"><span class="stat-label">Status</span><span class="stat-value status-na">N/A</span></div>
+            </div>
+        </div>
 
-(S)
-n/a
-demand: n/a
-status: n/a
-</pre>
-            </td>
-            
-            <!-- PRAWA KOLUMNA -->
-            <td>
-<pre>
-leviathan mangle - 1 levi
-demand: 9/10
-status: slowly rising
+        <!-- CARD 5: Marrionetes Puppet -->
+        <div class="char-card border-normal">
+            <div class="card-header">
+                <div class="char-avatar">
+                    <img src="marrionetes_puppet.png" alt="Marrionetes Puppet">
+                </div>
+                <div class="name-normal">Marrionetes Puppet</div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-box"><span class="stat-label">Value</span><span class="stat-value">0.25 levi</span></div>
+                <div class="stat-box"><span class="stat-label">Demand</span><span class="stat-value">6/10</span></div>
+                <div class="stat-box"><span class="stat-label">Status</span><span class="stat-value status-stable">Stable</span></div>
+            </div>
+        </div>
 
-(S)
-o/c
-demand: 10/10
-status: n/a
+        <!-- CARD 6: Shiny Marrionetes Puppet -->
+        <div class="char-card border-shiny">
+            <div class="card-header">
+                <div class="char-avatar">
+                    <img src="marrionetes_puppet_shiny.png" alt="Shiny Marrionetes Puppet">
+                </div>
+                <div class="name-shiny">(S) Marrionetes Puppet</div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-box"><span class="stat-label">Value</span><span class="stat-value">N/A</span></div>
+                <div class="stat-box"><span class="stat-label">Demand</span><span class="stat-value">N/A</span></div>
+                <div class="stat-box"><span class="stat-label">Status</span><span class="stat-value status-na">N/A</span></div>
+            </div>
+        </div>
 
----------------------------------
-blighted endo freddy - 1.5 levi
-demand 9/10
-status: slowly rising
+        <!-- CARD 7: Leviathan Mangle -->
+        <div class="char-card border-normal">
+            <div class="card-header">
+                <div class="char-avatar">
+                    <img src="leviathan_mangle.png" alt="Leviathan Mangle">
+                </div>
+                <div class="name-normal">Leviathan Mangle</div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-box"><span class="stat-label">Value</span><span class="stat-value">1 levi</span></div>
+                <div class="stat-box"><span class="stat-label">Demand</span><span class="stat-value">9/10</span></div>
+                <div class="stat-box"><span class="stat-label">Status</span><span class="stat-value status-rising">Slowly Rising</span></div>
+            </div>
+        </div>
 
-(S)
-o/c
-demand: 10/10
-status: n/a
+        <!-- CARD 8: Shiny Leviathan Mangle -->
+        <div class="char-card border-shiny">
+            <div class="card-header">
+                <div class="char-avatar">
+                    <img src="leviathan_mangle_shiny.png" alt="Shiny Leviathan Mangle">
+                </div>
+                <div class="name-shiny">(S) Leviathan Mangle</div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-box"><span class="stat-label">Value</span><span class="stat-value">O/C</span></div>
+                <div class="stat-box"><span class="stat-label">Demand</span><span class="stat-value">10/10</span></div>
+                <div class="stat-box"><span class="stat-label">Status</span><span class="stat-value status-na">N/A</span></div>
+            </div>
+        <!-- CARD 9: Phantom Mangle -->
+        <div class="char-card border-normal">
+            <div class="card-header">
+                <div class="char-avatar">
+                    <img src="phantom_mangle.png" alt="Phantom Mangle">
+                </div>
+                <div class="name-normal">Phantom Mangle</div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-box"><span class="stat-label">Value</span><span class="stat-value">N/A</span></div>
+                <div class="stat-box"><span class="stat-label">Demand</span><span class="stat-value">N/A</span></div>
+                <div class="stat-box"><span class="stat-label">Status</span><span class="stat-value status-na">N/A</span></div>
+            </div>
+        </div>
 
----------------------------------
-phantom mangle - n/a
-demand: n/a
-status: n/a
+        <!-- CARD 10: Shiny Phantom Mangle -->
+        <div class="char-card border-shiny">
+            <div class="card-header">
+                <div class="char-avatar">
+                    <img src="phantom_mangle_shiny.png" alt="Shiny Phantom Mangle">
+                </div>
+                <div class="name-shiny">(S) Phantom Mangle</div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-box"><span class="stat-label">Value</span><span class="stat-value">N/A</span></div>
+                <div class="stat-box"><span class="stat-label">Demand</span><span class="stat-value">N/A</span></div>
+                <div class="stat-box"><span class="stat-label">Status</span><span class="stat-value status-na">N/A</span></div>
+            </div>
+        </div>
 
-(S)
-n/a
-demand: n/a
-status: n/a
-</pre>
-            </td>
-        </tr>
-    </table>
+        <!-- CARD 11: Bukavac Mangle -->
+        <div class="char-card border-normal">
+            <div class="card-header">
+                <div class="char-avatar">
+                    <img src="bukavac_mangle.png" alt="Bukavac Mangle">
+                </div>
+                <div class="name-normal">Bukavac Mangle</div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-box"><span class="stat-label">Value</span><span class="stat-value">2.5 levi</span></div>
+                <div class="stat-box"><span class="stat-label">Demand</span><span class="stat-value">9/10</span></div>
+                <div class="stat-box"><span class="stat-label">Status</span><span class="stat-value status-unstable">Unstable</span></div>
+            </div>
+        </div>
 
+        <!-- CARD 12: Shiny Bukavac Mangle -->
+        <div class="char-card border-shiny">
+            <div class="card-header">
+                <div class="char-avatar">
+                    <img src="bukavac_mangle_shiny.png" alt="Shiny Bukavac Mangle">
+                </div>
+                <div class="name-shiny">(S) Bukavac Mangle</div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-box"><span class="stat-label">Value</span><span class="stat-value">O/C</span></div>
+                <div class="stat-box"><span class="stat-label">Demand</span><span class="stat-value">10/10</span></div>
+                <div class="stat-box"><span class="stat-label">Status</span><span class="stat-value status-na">N/A</span></div>
+            </div>
+        </div>
+
+    </div> <!-- ZAMKNIĘCIE SIATKI GRID-CONTAINER -->
 </body>
 </html>
