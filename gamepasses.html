@@ -56,22 +56,28 @@
             gap: 15px;
             margin-bottom: 20px;
         }
+        
+        /* ZMIENIONO NA 64x64px: Ramka na zdjęcie */
         .char-avatar {
-            width: 55px;
-            height: 55px;
+            width: 64px;
+            height: 64px;
             border-radius: 8px;
             background-color: #151515;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
+            overflow: hidden; /* Odcina wszystko co wystaje */
             border: 1px solid #333;
+            flex-shrink: 0;   /* Zapobiega spłaszczeniu ramki, gdy nazwa jest długa */
         }
+        
+        /* Styl obrazka wewnątrz ramki */
         .char-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            width: 100%;       /* Wypełnia całą szerokość ramki */
+            height: 100%;      /* Wypełnia całą wysokość ramki */
+            object-fit: cover; /* Docina obrazek proporcjonalnie bez zniekształceń */
         }
+        
         .name-gamepass { color: #eab308; font-weight: bold; font-size: 16px; }
         .stats-grid {
             display: grid;
@@ -104,12 +110,13 @@
         <div class="char-card">
             <div class="card-header">
                 <div class="char-avatar">
+                    <!-- Podmień poniższy adres URL na swój link 64x64 bezpośredni ze strony hostingowej -->
                     <img src="https://placehold.co" alt="VIP">
                 </div>
                 <div class="name-gamepass">VIP</div>
             </div>
             <div class="stats-grid">
-                <div class="stat-box"><span class="stat-label">Value</span><span class="stat-value">0.4 Levi</span></div>
+                <div class="stat-box"><span class="stat-label">Value</span><span class="stat-value">0.4 levi</span></div>
                 <div class="stat-box"><span class="stat-label">Demand</span><span class="stat-value">4/10</span></div>
                 <div class="stat-box"><span class="stat-label">Status</span><span class="stat-value status-stable">Stable</span></div>
             </div>
@@ -119,12 +126,13 @@
         <div class="char-card">
             <div class="card-header">
                 <div class="char-avatar">
+                    <!-- Podmień poniższy adres URL na swój link 64x64 bezpośredni ze strony hostingowej -->
                     <img src="https://placehold.co" alt="Prem Pass">
                 </div>
                 <div class="name-gamepass">Prem Pass</div>
             </div>
             <div class="stats-grid">
-                <div class="stat-box"><span class="stat-label">Value</span><span class="stat-value">0.5-0.6 Levi</span></div>
+                <div class="stat-box"><span class="stat-label">Value</span><span class="stat-value">0.5-0.6 levi</span></div>
                 <div class="stat-box"><span class="stat-label">Demand</span><span class="stat-value">5/10</span></div>
                 <div class="stat-box"><span class="stat-label">Status</span><span class="stat-value status-stable">Stable</span></div>
             </div>
@@ -134,7 +142,8 @@
         <div class="char-card">
             <div class="card-header">
                 <div class="char-avatar">
-                    <img src="https://postimg.cc/MXP1yn8bh" alt="2x Speed">
+                    <!-- Podmień poniższy adres URL na swój link 64x64 bezpośredni ze strony hostingowej -->
+                    <img src="https://placehold.co" alt="2x Speed">
                 </div>
                 <div class="name-gamepass">2x Speed</div>
             </div>
