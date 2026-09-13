@@ -32,9 +32,11 @@
             transition: 0.2s;
             background-color: #2d2d2d;
         }
-        /* Indywidualne kolory dla każdego przycisku */
-        .btn-nightmare {
-            color: #a855f7; /* Fioletowy */
+
+        /* ---------------- KOlORY DLA NIGHTMARE ---------------- */
+        /* Normalny stan, odwiedzony (:visited) oraz aktywny (:active) mają ten sam fioletowy kolor */
+        .btn-nightmare, .btn-nightmare:visited, .btn-nightmare:active {
+            color: #a855f7; 
             border: 2px solid #a855f7;
         }
         .btn-nightmare:hover {
@@ -42,8 +44,10 @@
             color: #1e1e1e;
         }
 
-        .btn-secret {
-            color: #ef4444; /* Czerwony */
+        /* ---------------- KOLORY DLA SECRET ---------------- */
+        /* Normalny stan, odwiedzony (:visited) oraz aktywny (:active) mają ten sam czerwony kolor */
+        .btn-secret, .btn-secret:visited, .btn-secret:active {
+            color: #ef4444; 
             border: 2px solid #ef4444;
         }
         .btn-secret:hover {
@@ -51,8 +55,10 @@
             color: #1e1e1e;
         }
 
-        .btn-gamepasses {
-            color: #eab308; /* Żółty */
+        /* ---------------- KOLORY DLA GAMEPASSES ---------------- */
+        /* Normalny stan, odwiedzony (:visited) oraz aktywny (:active) mają ten sam żółty kolor */
+        .btn-gamepasses, .btn-gamepasses:visited, .btn-gamepasses:active {
+            color: #eab308; 
             border: 2px solid #eab308;
         }
         .btn-gamepasses:hover {
@@ -64,11 +70,13 @@
 <body>
 
     <h1>Official Value List for OFNTD</h1>
-    <p>Select to view the list of values::</p>
+    <p>Wybierz kategorię, aby zobaczyć listę wartości:</p>
 
     <div class="menu-container">
-        <!-- Każdy przycisk ma teraz swoją własną klasę z kolorem -->
         <a href="nightmare.html" class="menu-btn btn-nightmare">💀 Nightmare Characters</a>
         <a href="secret.html" class="menu-btn btn-secret">🔮 Secret Characters</a>
         <a href="gamepasses.html" class="menu-btn btn-gamepasses">🎟️ Gamepass Characters</a>
     </div>
+
+</body>
+</html>
