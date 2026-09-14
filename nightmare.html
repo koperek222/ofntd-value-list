@@ -63,15 +63,15 @@
             border: 2px solid #6f00ff;
             box-shadow: 0 0 10px rgba(239, 68, 68, 0.15);
         }
-.border-shiny .stat-box:nth-child(1) .stat-value,
-.border-shiny .stat-box:nth-child(2) .stat-value {
-    background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff, #ff0000);
-    background-size: 200% auto;
-    box-shadow: 0 0 12px rgba(255, 0, 255, 0.3);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: rainbowText 3s linear infinite;
-}
+.border-shiny {
+            border: 2px solid transparent;
+            border-radius: 12px;
+            background: 
+                linear-gradient(145deg, #0f0f0f, #070707) padding-box, 
+                linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff, #ff0000) border-box;
+            box-shadow: 0 0 12px rgba(255, 0, 255, 0.3);
+        }
+
         .card-header {
             display: flex;
             align-items: center;
@@ -95,20 +95,26 @@
             height: 100%;
             object-fit: cover;
         }
-.name-shiny {
-    font-weight: bold;
-    font-size: 16px;
-    background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff, #ff0000);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: rainbowText 3s linear infinite;
-}
 
-@keyframes rainbowText {
-    0% { background-position: 0% center; }
-    100% { background-position: 200% center; }
-}
+        /* Nazwa zwykła */
+        .name-normal { color: #00ffcc; font-weight: bold; font-size: 16px; }
+
+        /* Tęczowy tekst (nazwa oraz wartości Shiny) */
+        .name-shiny, .stat-shiny {
+            font-weight: bold;
+            background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff, #ff0000);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rainbowText 3s linear infinite;
+        }
+        .name-shiny { font-size: 16px; }
+
+        @keyframes rainbowText {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
         .stats-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -123,6 +129,8 @@
             letter-spacing: 1px;
         }
         .stat-value { font-size: 14px; font-weight: bold; }
+
+        /* Kolory statusów */
         .status-stable { color: #38bdf8; }
         .status-rising { color: #4ade80; }
         .status-unstable { color: #f59e0b; }
