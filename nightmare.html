@@ -63,10 +63,13 @@
             border: 2px solid #6f00ff;
             box-shadow: 0 0 10px rgba(239, 68, 68, 0.15);
         }
-       .border-shiny {
-    border: 2px solid transparent;
-    border-image: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff, #ff0000) 1;
-    box-shadow: 0 0 12px rgba(255, 0, 255, 0.3);
+.border-shiny .stat-box:nth-child(1) .stat-value,
+.border-shiny .stat-box:nth-child(2) .stat-value {
+    background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff, #ff0000);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbowText 3s linear infinite;
 }
         .card-header {
             display: flex;
@@ -144,7 +147,14 @@
             outline: none;
             box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
         }
-
+.stat-shiny {
+    background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff, #ff0000);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbowText 3s linear infinite;
+}
+        
     </style>
 </head>
 <body>
