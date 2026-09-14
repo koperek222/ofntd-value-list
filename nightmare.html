@@ -2,159 +2,174 @@
 <head>
     <meta charset="UTF-8">
     <title>OFNTD - Nightmare Units</title>
-    <style>
-        body {
-            background-color: #050505;
-            color: #ffffff;
-            font-family: 'Consolas', 'Courier New', monospace;
-            padding: 30px;
-            margin: 0;
-        }
-        .header-container {
-            border-bottom: 2px solid #222;
-            padding-bottom: 15px;
-            margin-bottom: 30px;
-        }
-        .back-btn {
-            display: inline-block;
-            color: #a855f7;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-            margin-bottom: 10px;
-        }
-        .back-btn:hover { text-decoration: underline; }
-        h1 {
-            color: #ffffff;
-            font-size: 24px;
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .grid-container {
-            display: flex;        
-            flex-wrap: wrap;       
-            gap: 25px;            
-            max-width: 1300px;    
-            margin: 0 auto;        
-            justify-content: center; 
-        }
+   <style>
+    body {
+        background-color: #050505;
+        color: #ffffff;
+        font-family: 'Consolas', 'Courier New', monospace;
+        padding: 30px;
+        margin: 0;
+    }
+    .header-container {
+        border-bottom: 2px solid #222;
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+    }
+    .back-btn {
+        display: inline-block;
+        color: #ef4444;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .back-btn:hover { text-decoration: underline; }
+    h1 {
+        color: #ffffff;
+        font-size: 24px;
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    .grid-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        max-width: 1400px;
+        margin: 0 auto;
+        justify-content: center;
+    }
+    .char-card {
+        background-color: #0b0b0b;
+        border-radius: 12px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        width: 280px; 
+        box-sizing: border-box;
+    }
 
-        .char-card {
-            background-color: #0b0b0b;
-            border-radius: 12px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            width: 280px;       
-            box-sizing: border-box; 
-            flex-grow: 0;       
-            flex-shrink: 0;      
-        }
+    /* --- CZERWONY STYL DLA ZWYKŁYCH JEDNOSTEK --- */
+    .border-normal {
+        border: 2px solid #ef4444;
+        box-shadow: 0 0 10px rgba(239, 68, 68, 0.2);
+    }
+    .name-normal { 
+        color: #ef4444; 
+        font-weight: bold; 
+        font-size: 16px; 
+    }
+    .stat-normal {
+        color: #ef4444;
+        font-weight: bold;
+    }
 
-        /* Obramowanie zwykłe */
-        .border-normal {
-            border: 2px solid #6f00ff;
-            background-image: linear-gradient(145deg, #0f0f0f, #070707);
-            box-shadow: 0 0 10px rgba(239, 68, 68, 0.15);
-        }
+    /* --- FIOLETOWY STYL DLA JEDNOSTEK NIGHTMARE --- */
+    .border-nightmare {
+        border: 2px solid #a855f7;
+        box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
+    }
+    .name-nightmare {
+        color: #a855f7;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    .stat-nightmare {
+        color: #a855f7;
+        font-weight: bold;
+    }
 
-        /* Tęczowe obramowanie Shiny */
-        .border-shiny {
-            border: 2px solid transparent;
-            border-radius: 12px;
-            background: 
-                linear-gradient(145deg, #0f0f0f, #070707) padding-box, 
-                linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff, #ff0000) border-box;
-            box-shadow: 0 0 12px rgba(255, 0, 255, 0.3);
-        }
+    /* --- TĘCZOWY STYL DLA SHINY (OBRAZEK NIE ZMIENIA KOLORÓW) --- */
+    .border-shiny {
+        border: 2px solid transparent;
+        background: linear-gradient(#0b0b0b, #0b0b0b) padding-box,
+                    linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff, #ff0000) border-box;
+        background-size: 200% 100%;
+        animation: rainbowMove 3s linear infinite;
+    }
 
-        .card-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        .char-avatar {
-            width: 64px;
-            height: 64px;
-            border-radius: 8px;
-            background-color: #151515;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            border: 1px solid #333;
-            flex-shrink: 0;
-        }
-        .char-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    .name-shiny, .stat-shiny, .label-shiny {
+        font-weight: bold;
+        background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff, #ff0000);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: rainbowMove 3s linear infinite;
+    }
 
-        /* Nazwa zwykła */
-        .name-normal { color: #00ffcc; font-weight: bold; font-size: 16px; }
+    @keyframes rainbowMove {
+        0% { background-position: 0% center; }
+        100% { background-position: 200% center; }
+    }
 
-        /* Tęczowy tekst (nazwa, etykiety oraz wartości Shiny) */
-        .name-shiny, .stat-shiny, .label-shiny {
-            font-weight: bold;
-            background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff, #ff0000);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: rainbowText 3s linear infinite;
-            display: inline-block;
-        }
-        .name-shiny { font-size: 16px; }
+    /* --- ELEMENTY WSPÓLNE --- */
+    .card-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    .char-avatar {
+        width: 64px;
+        height: 64px;
+        border-radius: 8px;
+        background-color: #151515;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border: 1px solid #333;
+        flex-shrink: 0;
+    }
+    .char-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: none !important; 
+    }
+    .stats-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+    .stat-box { display: flex; flex-direction: column; }
+    .stat-label {
+        font-size: 11px;
+        color: #666;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+        letter-spacing: 1px;
+    }
+    .stat-value { font-size: 14px; font-weight: bold; }
+    .status-stable { color: #38bdf8; }
+    .status-rising { color: #4ade80; }
+    .status-unstable { color: #f59e0b; }
+    .status-na { color: #666666; }
 
-        @keyframes rainbowText {
-            0% { background-position: 0% center; }
-            100% { background-position: 200% center; }
-        }
+    .search-wrapper {
+        margin-top: 15px;
+        width: 100%;
+        max-width: 400px;
+        padding: 2px;
+        border-radius: 10px;
+        background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff, #ff0000);
+        background-size: 200% auto;
+        animation: rainbowMove 3s linear infinite;
+    }
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-        .stat-box { display: flex; flex-direction: column; }
-        .stat-label {
-            font-size: 11px;
-            color: #666;
-            text-transform: uppercase;
-            margin-bottom: 4px;
-            letter-spacing: 1px;
-        }
-        .stat-value { font-size: 14px; font-weight: bold; }
-
-        /* Kolory statusów */
-        .status-stable { color: #38bdf8; }
-        .status-rising { color: #4ade80; }
-        .status-unstable { color: #f59e0b; }
-        .status-na { color: #666666; }
-   
-        /* Wyszukiwarka */
-        #searchBar {
-            width: 100%;
-            max-width: 400px;
-            padding: 12px 20px;
-            margin-top: 15px;
-            background-color: #0b0b0b;
-            border: 2px solid #333;
-            border-radius: 8px;
-            color: #ffffff;
-            font-family: inherit;
-            font-size: 14px;
-            box-sizing: border-box;
-            transition: 0.2s;
-        }
-        #searchBar:focus {
-            border-color: #a855f7;
-            outline: none;
-            box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
-        }
-    </style>
+    #searchBar {
+        width: 100%;
+        padding: 12px 20px;
+        background-color: #0b0b0b;
+        border: none;
+        border-radius: 8px;
+        color: #ffffff;
+        font-family: inherit;
+        font-size: 14px;
+        box-sizing: border-box;
+        outline: none;
+    }
+</style>
 </head>
 <body>
 
