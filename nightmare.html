@@ -100,14 +100,15 @@
         .name-normal { color: #00ffcc; font-weight: bold; font-size: 16px; }
 
         /* Tęczowy tekst (nazwa oraz wartości Shiny) */
-        .name-shiny, .stat-shiny {
-            font-weight: bold;
-            background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff, #ff0000);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: rainbowText 3s linear infinite;
-        }
+.name-shiny, .stat-shiny, .label-shiny {
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff, #ff0000);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbowText 3s linear infinite;
+    display: inline-block;
+}
         .name-shiny { font-size: 16px; }
 
         @keyframes rainbowText {
